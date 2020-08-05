@@ -81,10 +81,10 @@ WSGI_APPLICATION = 'graph_tutorial.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': 'outlook-calendar',
+        'NAME': 'outlookCalendarDB',
         'USER': 'postgres',
-        'PASSWORD': 'admin',
-        'HOST': 'localhost',
+        'PASSWORD': 'postgres',
+        'HOST': 'aws-outlook-db.cilwlg4adubk.us-east-2.rds.amazonaws.com',
         'PORT': '5432',
     }
 }
@@ -112,9 +112,9 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/3.0/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'es-mx'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'America/Mexico_City'
 
 USE_I18N = True
 

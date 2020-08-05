@@ -112,7 +112,7 @@ def eventCreate(request):
     print('DATE: ',date)
 
     newHeaders = {
-      'Content-type': 'application/json', 
+      'Content-type': 'application/json;IEEE754Compatible=false', 
       'Accept': 'text/plain',
       'Authorization': 'Bearer ' + token['access_token'],
       'client_id' : settings['app_id'],
@@ -120,15 +120,14 @@ def eventCreate(request):
     }
     url = 'https://graph.microsoft.com/v1.0/me/events'
     data = {
-      "subject": owner,
       "subject": subject,
       "start": {
-          "dateTime": date+"T"+"12:00:00",
-          "timeZone": "Pacific Standard Time"
+          "dateTime": date+"T"+start+"+0000Z",
+          "timeZone": "America/Mexico_City"
       },
       "end": {
-          "dateTime": date+"T"+"12:00:00",
-          "timeZone": "Pacific Standard Time"
+          "dateTime": date+"T"+end+"+0000Z",
+          "timeZone": "America/Mexico_City"
       },
       "allowNewTimeProposals": True
     }

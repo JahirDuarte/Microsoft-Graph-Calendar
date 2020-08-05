@@ -33,13 +33,13 @@
     <!-- jQuery Modal -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
-  
+    <meta charset="UTF-8">
   </head>
 
   <body>
     <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
       <div class="container">
-        <a href="{% url 'home' %}" class="navbar-brand">Python Graph Tutorial</a>
+        <a href="{% url 'home' %}" class="navbar-brand">Listopro Calendar</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
           aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -47,11 +47,11 @@
         <div class="collapse navbar-collapse" id="navbarCollapse">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-              <a href="{% url 'home' %}" class="nav-link{% if request.resolver_match.view_name == 'home' %} active{% endif %}">Home</a>
+              <a href="{% url 'home' %}" class="nav-link{% if request.resolver_match.view_name == 'home' %} active{% endif %}">inicio</a>
             </li>
             {% if user.is_authenticated %}
               <li class="nav-item" data-turbolinks="false">
-                <a class="nav-link{% if request.resolver_match.view_name == 'calendar' %} active{% endif %}" href="{% url 'calendar' %}">Calendar</a>
+                <a class="nav-link{% if request.resolver_match.view_name == 'calendar' %} active{% endif %}" href="{% url 'calendar' %}">Calendario</a>
               </li>
             {% endif %}
           </ul>

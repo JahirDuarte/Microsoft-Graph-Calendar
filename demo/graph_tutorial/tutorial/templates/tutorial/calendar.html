@@ -5,6 +5,11 @@
 {% extends "tutorial/layout.html" %}
 {% block content %}
 <!--<div id='events'>{{ events }}</div>-->
+<style>
+  .modal a.close-modal {
+    display: none !important;
+  }
+</style>
 
 <script>
   document.addEventListener('DOMContentLoaded', function() {
@@ -33,8 +38,8 @@
 
 </script>
 
+<!--
 <h1>Calendar</h1>
-
 <table class="table">
   <thead>
     <tr>
@@ -56,12 +61,15 @@
       {% endfor %}
     {% endif %}
   </tbody>
-</table>
+</table>-->
+
+<!-- Link to open the modal -->
+<p><a id="register" href="#ex1" rel="modal:open" style="padding:8px; border-style: solid; border-width: 1.5px; border-color: rgb(0, 120, 212); background-color: rgb(0, 120, 212); color:white;">Crear un evento</a></p>
 
 <div id='calendar'></div>
 
 <!-- Modal HTML embedded directly into document -->
-<div id="ex1" class="modal" style="top:55px !important; padding:0px !important; height:42% !important;">
+<div id="ex1" class="modal" style="top:55px !important; padding:0px !important; height:38% !important;">
   <div style="background-color: rgb(0, 120, 212); color:white; padding: 5px 15px;">
     Calendario
   </div>
@@ -76,60 +84,56 @@
           min="2020-08-01" max="2050-01-01"
           style="width:100% !important; border-style:none; border-bottom:solid; border-color: rgb(41, 46, 49); border-width:thin;">
         <select name="start" style="border-style:none; border-bottom:solid; border-color: rgb(41, 46, 49); border-width:thin;">
-          <option value="value1">12:00 AM</option>
-          <option value="value1">01:00 AM</option>
-          <option value="value1">02:00 AM</option>
-          <option value="value1">03:00 AM</option>
-          <option value="value1">04:00 AM</option>
-          <option value="value1">05:00 AM</option>
-          <option value="value1">06:00 AM</option>
-          <option value="value1">07:00 AM</option>
-          <option value="value1">08:00 AM</option>
-          <option value="value1">09:00 AM</option>
-          <option value="value1">10:00 AM</option>
-          <option value="value1">11:00 AM</option>
-          <option value="value1">12:00 PM</option>
-          <option value="value1">12:00 PM</option>
-          <option value="value1">01:00 PM</option>
-          <option value="value1">02:00 PM</option>
-          <option value="value1">03:00 PM</option>
-          <option value="value1">04:00 PM</option>
-          <option value="value1">05:00 PM</option>
-          <option value="value1">06:00 PM</option>
-          <option value="value1">07:00 PM</option>
-          <option value="value1">08:00 PM</option>
-          <option value="value1">09:00 PM</option>
-          <option value="value1">10:00 PM</option>
-          <option value="value1">11:00 PM</option>
-          <option value="value1">12:00 PM</option>
+          <option value="12:00:00">12:00 AM</option><option value="12:30:00">12:30 AM</option>
+          <option value="01:00:00">01:00 AM</option><option value="01:30:00">01:30 AM</option>
+          <option value="02:00:00">02:00 AM</option><option value="02:30:00">02:30 AM</option>
+          <option value="03:00:00">03:00 AM</option><option value="03:30:00">03:30 AM</option>
+          <option value="04:00:00">04:00 AM</option><option value="04:30:00">04:30 AM</option>
+          <option value="05:00:00">05:00 AM</option><option value="05:30:00">05:30 AM</option>
+          <option value="06:00:00">06:00 AM</option><option value="06:30:00">06:30 AM</option>
+          <option value="07:00:00">07:00 AM</option><option value="07:30:00">07:30 AM</option>
+          <option value="08:00:00">08:00 AM</option><option value="08:30:00">08:30 AM</option>
+          <option value="09:00:00">09:00 AM</option><option value="09:30:00">09:30 AM</option>
+          <option value="10:00:00">10:00 AM</option><option value="10:30:00">10:30 AM</option>
+          <option value="11:00:00">11:00 AM</option><option value="11:30:00">11:30 AM</option>
+          <option value="12:00:00">12:00 PM</option><option value="12:30:00">12:30 PM</option>
+          <option value="13:00:00">01:00 PM</option><option value="13:30:00">01:30 PM</option>
+          <option value="14:00:00">02:00 PM</option><option value="14:30:00">02:30 PM</option>
+          <option value="15:00:00">03:00 PM</option><option value="15:30:00">03:30 PM</option>
+          <option value="16:00:00">04:00 PM</option><option value="16:30:00">04:30 PM</option>
+          <option value="17:00:00">05:00 PM</option><option value="17:30:00">05:30 PM</option>
+          <option value="18:00:00">06:00 PM</option><option value="18:30:00">06:30 PM</option>
+          <option value="19:00:00">07:00 PM</option><option value="19:30:00">07:30 PM</option>
+          <option value="20:00:00">08:00 PM</option><option value="20:30:00">08:30 PM</option>
+          <option value="21:00:00">09:00 PM</option><option value="21:30:00">09:30 PM</option>
+          <option value="22:00:00">10:00 PM</option><option value="22:30:00">10:30 PM</option>
+          <option value="23:00:00">11:00 PM</option><option value="23:30:00">11:30 PM</option>
         </select>
         <select name="end" style="border-style:none; border-bottom:solid; border-color: rgb(41, 46, 49); border-width:thin;">
-          <option value="value1">12:00 AM</option>
-          <option value="value1">01:00 AM</option>
-          <option value="value1">02:00 AM</option>
-          <option value="value1">03:00 AM</option>
-          <option value="value1">04:00 AM</option>
-          <option value="value1">05:00 AM</option>
-          <option value="value1">06:00 AM</option>
-          <option value="value1">07:00 AM</option>
-          <option value="value1">08:00 AM</option>
-          <option value="value1">09:00 AM</option>
-          <option value="value1">10:00 AM</option>
-          <option value="value1">11:00 AM</option>
-          <option value="value1">12:00 AM</option>
-          <option value="value1">12:00 PM</option>
-          <option value="value1">12:00 PM</option>
-          <option value="value1">01:00 PM</option>
-          <option value="value1">02:00 PM</option>
-          <option value="value1">03:00 PM</option>
-          <option value="value1">04:00 PM</option>
-          <option value="value1">05:00 PM</option>
-          <option value="value1">06:00 PM</option>
-          <option value="value1">07:00 PM</option>
-          <option value="value1">08:00 PM</option>
-          <option value="value1">09:00 PM</option>
-          <option value="value1">10:00 PM</option>
-          <option value="value1">11:00 PM</option>
+          <option value="12:00:00">12:00 AM</option><option value="12:30:00">12:30 AM</option>
+          <option value="01:00:00">01:00 AM</option><option value="01:30:00">01:30 AM</option>
+          <option value="02:00:00">02:00 AM</option><option value="02:30:00">02:30 AM</option>
+          <option value="03:00:00">03:00 AM</option><option value="03:30:00">03:30 AM</option>
+          <option value="04:00:00">04:00 AM</option><option value="04:30:00">04:30 AM</option>
+          <option value="05:00:00">05:00 AM</option><option value="05:30:00">05:30 AM</option>
+          <option value="06:00:00">06:00 AM</option><option value="06:30:00">06:30 AM</option>
+          <option value="07:00:00">07:00 AM</option><option value="07:30:00">07:30 AM</option>
+          <option value="08:00:00">08:00 AM</option><option value="08:30:00">08:30 AM</option>
+          <option value="09:00:00">09:00 AM</option><option value="09:30:00">09:30 AM</option>
+          <option value="10:00:00">10:00 AM</option><option value="10:30:00">10:30 AM</option>
+          <option value="11:00:00">11:00 AM</option><option value="11:30:00">11:30 AM</option>
+          <option value="12:00:00">12:00 PM</option><option value="12:30:00">12:30 PM</option>
+          <option value="13:00:00">01:00 PM</option><option value="13:30:00">01:30 PM</option>
+          <option value="14:00:00">02:00 PM</option><option value="14:30:00">02:30 PM</option>
+          <option value="15:00:00">03:00 PM</option><option value="15:30:00">03:30 PM</option>
+          <option value="16:00:00">04:00 PM</option><option value="16:30:00">04:30 PM</option>
+          <option value="17:00:00">05:00 PM</option><option value="17:30:00">05:30 PM</option>
+          <option value="18:00:00">06:00 PM</option><option value="18:30:00">06:30 PM</option>
+          <option value="19:00:00">07:00 PM</option><option value="19:30:00">07:30 PM</option>
+          <option value="20:00:00">08:00 PM</option><option value="20:30:00">08:30 PM</option>
+          <option value="21:00:00">09:00 PM</option><option value="21:30:00">09:30 PM</option>
+          <option value="22:00:00">10:00 PM</option><option value="22:30:00">10:30 PM</option>
+          <option value="23:00:00">11:00 PM</option><option value="23:30:00">11:30 PM</option>
         </select>
       </p>
       <button type="submit" style="padding:8px; border-style: solid; border-width: 1.5px; border-color: rgb(0, 120, 212); background-color: rgb(0, 120, 212); color:white;">Guardar</button>
@@ -137,9 +141,6 @@
       </form>
   </div> 
 </div>
-
-<!-- Link to open the modal -->
-<p><a id="register" href="#ex1" rel="modal:open">Open Modal</a></p>
 
 {% endblock %}
 <!-- </CalendarSnippet> -->
