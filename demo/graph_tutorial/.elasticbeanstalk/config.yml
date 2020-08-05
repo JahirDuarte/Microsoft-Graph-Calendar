@@ -1,0 +1,17 @@
+branch-defaults:
+  master:
+    environment: MicrosoftGraphCalendar-Prod
+    group_suffix: null
+global:
+  application_name: MicrosoftGraphCalendar
+  branch: null
+  default_ec2_keyname: Prospectia-Key
+  default_platform: Python 3.6
+  default_region: us-east-2
+  instance_profile: null
+  platform_name: null
+  platform_version: null
+  profile: eb-cli
+  repository: null
+  sc: git
+  workspace_type: Application
