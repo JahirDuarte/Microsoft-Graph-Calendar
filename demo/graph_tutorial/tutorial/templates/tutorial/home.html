@@ -1,0 +1,18 @@
+<!-- Copyright (c) Microsoft Corporation.
+     Licensed under the MIT License. -->
+
+<!-- <HomeSnippet> -->
+{% extends "tutorial/layout.html" %}
+{% block content %}
+<div class="jumbotron">
+  <h1>Listopro Calendar</h1>
+  <p class="lead">Agenda una cita en el calendario de Listopro para una entrevista.</p>
+  {% if user.is_authenticated %}
+    <h4>Bienvenido {{ user.name }}!</h4>
+    <p>Usa la barra de navegación para comenzar a agendar cita.</p>
+  {% else %}
+    <a href="{% url 'signin' %}" class="btn btn-primary btn-large">Haz clic aquí para registarte</a>
+  {% endif %}
+</div>
+{% endblock %}
+<!-- </HomeSnippet> -->
